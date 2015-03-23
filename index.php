@@ -62,7 +62,7 @@ $app->post('/contact', function() use($app) {
         // thank you
         $mg = new Mailgun(MAILGUN_KEY);
         $domain = "ntu.shouko.tw";
-/*        $mg->sendMessage($domain, array(
+        $mg->sendMessage($domain, array(
           'from'    => 'imcamp2015@ntu.shouko.tw',
           'to'      => 'camp2015@ntu.im',
           'subject' => $_POST['subject'],
@@ -70,7 +70,7 @@ $app->post('/contact', function() use($app) {
           'text'    => "From: ".$_POST['name']."<".$_POST['email'].">, ".$_SERVER["REMOTE_ADDR"]."\nUser-Agent:".$_SERVER["HTTP_USER_AGENT"]."\n\n".$_POST['message']
           )
         );
-*/
+
         $app->render('message.php', array('title' => 'Thank You!', 'message' => '感謝您的填寫，我們將盡快回覆<br><div class="row">
           <div class="12u">
             <ul class="actions">
