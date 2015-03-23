@@ -5,3 +5,4 @@ RewriteRule ^(.*)$ index.php [QSA,L]
 
 RedirectMatch 404 vendor
 RedirectMatch 404 views
+RedirectMatch 404 includes
