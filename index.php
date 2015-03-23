@@ -7,7 +7,8 @@ $app = new \Slim\Slim(
 );
 
 $app->hook('slim.before.dispatch', function () use ($app) {
-	$app->render('header.php');
+//  echo $app->request()->getPathInfo();
+	$app->render('header.php', array("nav" => "public"));
 });
 
 $app->hook('slim.after.dispatch', function () use ($app) {
