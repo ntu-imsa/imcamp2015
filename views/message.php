@@ -2,6 +2,6 @@
   <div class="content container">
     <header>
       <h2><?= $title ?></h2>
-      <p><?= $content ?></p>
+      <p><?= $message ?></p>
     </header>
 </section>

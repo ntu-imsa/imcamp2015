@@ -32,7 +32,7 @@ $app->post('/contact', function() use($app) {
     }
   }
   $refer_url = parse_url($_SERVER['HTTP_REFERER']);
-  if($refer_url == false || $refer_url['host'] != 'ntu.im'){
+  if($refer_url == false || $refer_url['host'] != 'ntu.im' && $_SERVER['HTTP_HOST'] != 'localhost'){
     $error['title'] = "QAQ";
     $error['message'] = "表單填寫不完整";
   }
@@ -59,8 +59,7 @@ $app->post('/contact', function() use($app) {
         echo "Spam check failed";
         break;
       case "false":
-        //
-    //				echo "Thank you!";
+        // thank you
         $mg = new Mailgun(MAILGUN_KEY);
         $domain = "ntu.shouko.tw";
 /*        $mg->sendMessage($domain, array(
@@ -72,7 +71,13 @@ $app->post('/contact', function() use($app) {
           )
         );
 */
-        $app->render('message.php', array('title' => 'Thank You!', 'message' => '感謝您的填寫，我們將盡快回覆'));
+        $app->render('message.php', array('title' => 'Thank You!', 'message' => '感謝您的填寫，我們將盡快回覆<br><div class="row">
+          <div class="12u">
+            <ul class="actions">
+              <li><a href="./" class="button">回首頁</a></li>
+            </ul>
+          </div>
+        </div>'));
         break;
       default:
         break;
@@ -85,6 +90,16 @@ $app->post('/contact', function() use($app) {
 
 $app->get('/login', function() use($app) {
 
+});
+
+$app->get('/thankyou', function() use($app) {
+  $app->render('message.php', array('title' => 'Thank You!', 'message' => '感謝您的填寫，我們將盡快回覆<br><div class="row">
+    <div class="12u">
+      <ul class="actions">
+        <li><a href="./" class="button">回首頁</a></li>
+      </ul>
+    </div>
+  </div>'));
 });
 
 $app->run();
