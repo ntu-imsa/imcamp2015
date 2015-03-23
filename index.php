@@ -26,7 +26,7 @@ $app->post('/contact', function() use($app) {
   $required_parameters = array("name", "email", "subject", "message");
   $error = array();
   foreach($required_parameters as $para){
-    if(!isset($_POST[$para])){
+    if(!isset($_POST[$para]) || $_POST[$para] == ''){
       $error['title'] = "QAQ";
       $error['message'] = "表單填寫不完整";
     }
