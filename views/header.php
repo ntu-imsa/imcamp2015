@@ -32,12 +32,15 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro">首頁</a></li>
-							<li><a href="#one">營隊簡介</a></li>
-							<li><a href="#two">報名資訊</a></li>
-							<li><a href="#work">課程內容</a></li>
-							<li><a href="#contact">聯絡我們</a></li>
-							<li><a href="//facebook.com/ntuimcamp">粉絲專頁</a></li>
+              <?php
+                switch($nav){
+                  case "reg":
+                    include "header_nav_reg.php";
+                    break;
+                  default:
+                    include "header_nav_public.php";
+                }
+              ?>
 						</ul>
 					</nav>
 
