@@ -19,6 +19,11 @@ $app->get('/', function() use($app) {
   $app->render('index.php');
 });
 
+$app->post('/contact', function() use($app) {
+  require 'includes/akismet.fuspam.php';
+  use Mailgun\Mailgun;
+});
+
 $app->get('/login', function() use($app) {
 
 });
