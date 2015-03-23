@@ -85,7 +85,7 @@
 					</header>
 					<div class="box container 75%">
 
-							<form method="post" action="#">
+							<form method="post" action="./contact">
 								<div class="row 50%">
 									<div class="6u"><input type="text" name="name" placeholder="姓名" /></div>
 									<div class="6u"><input type="email" name="email" placeholder="Email" /></div>
