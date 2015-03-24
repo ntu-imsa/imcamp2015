@@ -32,7 +32,7 @@ $app->post('/contact', function() use($app) {
     }
   }
   $refer_url = parse_url($_SERVER['HTTP_REFERER']);
-  if($refer_url == false || $refer_url['host'] != 'ntu.im' && $_SERVER['HTTP_HOST'] != 'localhost'){
+  if($refer_url == false || $refer_url['host'] != 'ntu.im' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1'){
     $error['title'] = "QAQ";
     $error['message'] = "表單填寫不完整";
   }
