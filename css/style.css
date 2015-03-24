@@ -314,7 +314,7 @@
 				form input[type="text"]:focus,
 				form input[type="email"]:focus,
 				form input[type="password"]:focus,
-				form input[type="tel"],
+				form input[type="tel"]:focus,
 				form select:focus,
 				form textarea:focus {
 					border-color: #9ac8e9;
