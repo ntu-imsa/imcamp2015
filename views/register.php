@@ -34,7 +34,7 @@
             <div class="6u 12u(narrower)"><input type="text" name="rocid" placeholder="身分證字號 (保險用)" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="school" placeholder="就讀學校" /></div>
             <div class="6u 12u(narrower)">
-              <select name="size">
+              <select name="grade">
                 <option>年級▽</option>
                 <option value="1">一年級</option>
                 <option value="2">二年級</option>
