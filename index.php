@@ -193,11 +193,33 @@ $app->post('/register', function() use($app) {
           </div>
         </div>';
       }else{
-        $upload_name = time().'_'.rand(100,999).'.'.$ext;
+        $upload_name = time().'_'.$fn.'_'.rand(100,999).'.'.$ext;
         move_uploaded_file($_FILES[$fn]['tmp_name'], 'uploads/'.$upload_name);
         $reg['photo_'.$fn] = $upload_name;
       }
     }
+
+    if(isset($_POST['special_discount']) && $_POST['special_discount'] == 1){
+      $fn = 'sp';
+      $original_name = explode('.', strtolower($_FILES[$fn]['name']));
+      $ext = $original_name[count($original_name)-1];
+      if( ! ( isset($_FILES[$fn]) && $_FILES[$fn]['error'] == 0 && $_FILES[$fn]['size'] <= 5*1024*1024 ) ){
+        $error['title'] = 'QAQ';
+        $error['message'] = '檔案大小請勿超過 5 MB<br><div class="row">
+          <div class="12u">
+            <ul class="actions">
+              <li><a href="javascript:history.back()" class="button">回上頁</a></li>
+            </ul>
+            </div>
+          </div>';
+      }else{
+        $upload_name = time().'_'.$fn.'_'.rand(100,999).'.'.$ext;
+        move_uploaded_file($_FILES[$fn]['tmp_name'], 'uploads/'.$upload_name);
+        $reg['special_discount'] = 1;
+        $reg[$fn] = $upload_name;
+      }
+    }
+
     $reg['ua'] = $_SERVER['HTTP_USER_AGENT'];
     $reg['ip'] = $_SERVER['REMOTE_ADDR'];
     $reg['reg_time'] = R::isoDateTime();

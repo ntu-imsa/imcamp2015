@@ -66,6 +66,21 @@
             <div class="12u"><textarea name="hobby" placeholder="個人興趣或特質" rows="6"></textarea></div>
             <div class="12u"><textarea name="experience" placeholder="特殊經歷(社團活動、工作經驗或其他特殊事蹟等,限國高中時期)" rows="6"></textarea></div>
             <div class="12u"><textarea name="hobby" placeholder="報名動機及期待收穫" rows="6"></textarea></div>
+            <div class="12u"><label><input type="checkbox" name="special_discount" id="special_discount" value="1">申請家境清寒報名費減免</label></div>
+            <div class="row" id="special_upload" style="display:none">
+              <div class="12u">為協助家境清寒學生能參與本次活動，<br>上傳相關證明文件並錄取後，得以2000元報名費參與本次活動。</div>
+              <div class="4u">相關證明文件：</div>
+              <div class="8u"><input name="sp" type="file"></div>
+            </div>
+            <script type="text/javascript">
+              document.getElementById('special_discount').onclick = function() {
+                if(this.checked){
+                  document.getElementById('special_upload').style.display = '';
+                }else{
+                  document.getElementById('special_upload').style.display = 'none';
+                }
+              };
+            </script>
           </div>
 <!--
 姓名		性別
