@@ -2,7 +2,10 @@
 session_start();
 require 'includes/config.php';
 require 'vendor/autoload.php';
+require 'rb.php';
 use Mailgun\Mailgun;
+
+R::setup( 'mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS );
 
 $app = new \Slim\Slim(
   array('templates.path' => './views')
