@@ -109,8 +109,9 @@ $app->post('/register', function() use($app) {
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
   curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query( array( "secret" => RECAPTCHA_KEY, "response" => isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : exit() , "remoteip" => $_SERVER['REMOTE_ADDR']) ));
-  $result = json_decode(curl_exec($ch),1);
+  $result = json_decode(curl_exec($ch), 1);
   curl_close($ch);
 
 //  print_r($_POST);
