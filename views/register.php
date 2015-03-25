@@ -16,6 +16,8 @@
                 <option value="1">女</option>
               </select>
             </div>
+          </div>
+          <div class="row 50%">
             <?php
               $cols = array(
                 array("bd_y", "出生年", 1995, 2005),
@@ -32,10 +34,14 @@
               }
             ?>
             <div class="6u 12u(narrower)"><input type="text" name="rocid" placeholder="身分證字號 (保險用)" /></div>
+          </div>
+          <div class="row 50%">
             <div class="3u">大頭照：</div>
-            <div class="9u"><input name="id" type="file"></div>
+            <div class="7u"><input name="id" type="file"></div>
             <div class="3u">個人生活照：</div>
-            <div class="9u"><input name="life" type="file"></div>
+            <div class="7u"><input name="life" type="file"></div>
+          </div>
+          <div class="row 50%">
             <div class="6u 12u(narrower)"><input type="text" name="school" placeholder="就讀學校" /></div>
             <div class="6u 12u(narrower)">
               <select name="grade">
@@ -45,6 +51,8 @@
                 <option value="3">三年級</option>
               </select>
             </div>
+          </div>
+          <div class="row 50%">
             <div class="6u 12u(narrower)">
               <select name="size">
                 <option>營服尺寸▽</option>
@@ -57,12 +65,20 @@
               </select>
             </div>
             <div class="6u 12u(narrower)"><input type="tel" name="tel" placeholder="聯絡電話" /></div>
+          </div>
+          <div class="row 50%">
             <div class="6u 12u(narrower)"><input type="text" name="emergency" placeholder="緊急聯絡人姓名/關係" /></div>
             <div class="6u 12u(narrower)"><input type="tel" name="emergency_tel" placeholder="緊急聯絡人電話" /></div>
+          </div>
+          <div class="row 50%">
             <div class="6u 12u(narrower)"><input type="text" name="eating" placeholder="特殊飲食需求 (eg. 素食、不吃牛...)" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="illness" placeholder="特殊疾病、狀況" /></div>
+          </div>
+          <div class="row 50%">
             <div class="12u"><input type="email" name="email" placeholder="聯絡 Email" /></div>
             <div class="12u"><input type="text" name="address" placeholder="通訊地址" /></div>
+          </div>
+          <div class="row 50%">
             <div class="12u"><textarea name="hobby" placeholder="個人興趣或特質" rows="6"></textarea></div>
             <div class="12u"><textarea name="experience" placeholder="特殊經歷(社團活動、工作經驗或其他特殊事蹟等,限國高中時期)" rows="6"></textarea></div>
             <div class="12u"><textarea name="expect" placeholder="報名動機及期待收穫" rows="6"></textarea></div>
@@ -70,7 +86,7 @@
             <div class="row" id="special_upload" style="display:none">
               <div class="12u">為協助家境清寒學生能參與本次活動，<br>上傳相關證明文件並錄取後，得以2000元報名費參與本次活動。</div>
               <div class="4u">相關證明文件：</div>
-              <div class="8u"><input name="sp" type="file"></div>
+              <div class="6u"><input name="sp" type="file"></div>
             </div>
             <script type="text/javascript">
               document.getElementById('special_discount').onclick = function() {
