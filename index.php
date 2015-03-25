@@ -106,6 +106,7 @@ $app->get('/register', function() use($app) {
 
 $app->post('/register', function() use($app) {
 
+  // Check reCaptcha result
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
   curl_setopt($ch, CURLOPT_POST, true);
@@ -151,6 +152,7 @@ $app->post('/register', function() use($app) {
 
   $reg = R::dispense('reg');
 
+  // Make sure all values are legal
   foreach($para_req as $para_key => $para_val){
     if(isset($_POST[$para_key])){
       $flag = 0;
@@ -174,6 +176,7 @@ $app->post('/register', function() use($app) {
     }
   }
 
+  // File upload handling
   if(empty($error)){
     $files = array('id', 'life');
     $legal_exts = array('jpg', 'jpeg', 'png', 'gif');
