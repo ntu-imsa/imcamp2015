@@ -18,9 +18,9 @@
             </div>
             <?php
               $cols = array(
-                array("bd-y", "出生年", 1995, 2005),
-                array("bd-m", "月", 1, 12),
-                array("bd-d", "日", 1, 31)
+                array("bd_y", "出生年", 1995, 2005),
+                array("bd_m", "月", 1, 12),
+                array("bd_d", "日", 1, 31)
               );
               foreach($cols as $col){
                 echo '<div class="2u 4u(narrower)"><select name="'.$col[0].'">';
@@ -54,7 +54,7 @@
             </div>
             <div class="6u 12u(narrower)"><input type="tel" name="tel" placeholder="聯絡電話" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="emergency" placeholder="緊急聯絡人姓名/關係" /></div>
-            <div class="6u 12u(narrower)"><input type="tel" name="emergency-tel" placeholder="緊急聯絡人電話" /></div>
+            <div class="6u 12u(narrower)"><input type="tel" name="emergency_tel" placeholder="緊急聯絡人電話" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="eating" placeholder="特殊飲食需求 (eg. 素食、不吃牛...)" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="illness" placeholder="特殊疾病、狀況" /></div>
             <div class="12u"><input type="email" name="email" placeholder="聯絡 Email" /></div>

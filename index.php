@@ -106,6 +106,85 @@ $app->get('/register', function() use($app) {
 
 $app->post('/register', function() use($app) {
   print_r($_POST);
+  $error = array();
+
+  /*
+   Requirements of each parameter
+   0: required text
+   1: required integer
+   2: optional
+  */
+
+  $para_req = array(
+    'name' => 0,
+    'gender' => 1,
+    'bd_y' => 1,
+    'bd_m' => 1,
+    'bd_d' => 1,
+    'rocid' => 0,
+    'school' => 0,
+    'grade' => 1,
+    'size' => 0,
+    'tel' => 0,
+    'emergency' => 0,
+    'emergency_tel' => 0,
+    'eating' => 2,
+    'illness' => 2,
+    'email' => 0,
+    'address' => 0,
+    'hobby' => 0,
+    'experience' => 0
+  );
+
+  $reg = R::dispense('reg');
+
+  foreach($para_req as $para_key => $para_val){
+    if(isset($_POST[$para_key])){
+      $flag = 0;
+      switch($para_val){
+        case 0:
+          $flag = $_POST[$para_key] == '' ? 1 : 0 ;
+          break;
+        case 1:
+          $flag = $_POST[$para_key] != abs($_POST[$para_key]) ? 1 : 0 ;
+          break;
+        default:
+      }
+      if($flag == 1){
+        $error['title'] = 'QAQ';
+        break;
+      }else{
+        $reg[$para_key] = $_POST[$para_key];
+      }
+    }else{
+      $error['title'] = 'QAQ';
+      echo 'nyan'.$para_key;
+    }
+  }
+
+  if(empty($error)){
+    R::store($reg);
+    $app->render('message.php', array(
+      'title' => '報名成功！',
+      'message' => '感謝您的報名，請靜待通知喔～<br><div class="row">
+        <div class="12u">
+          <ul class="actions">
+            <li><a href="./" class="button">回首頁</a></li>
+          </ul>
+        </div>
+      </div>'
+    ));
+  }else{
+    $error['message'] = '表單有錯誤喔<br><div class="row">
+      <div class="12u">
+        <ul class="actions">
+          <li><a href="./" class="button">回首頁</a></li>
+        </ul>
+      </div>
+    </div>';
+    $app->render('message.php', $error);
+  }
+
 });
 
 $app->get('/thankyou', function() use($app) {
