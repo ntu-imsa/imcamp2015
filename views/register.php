@@ -9,14 +9,33 @@
         <form method="post" action="./contact">
           <div class="row 50%">
             <div class="6u 12u(narrower)"><input type="text" name="name" placeholder="姓名" /></div>
-            <div class="6u 12u(narrower)" style="text-align:left;line-height:3.1em;">性別：
-              <label style="display:inline"><input type="radio" name="gender" value="0" id="male" />男</label>
-              <label style="display:inline"><input type="radio" name="gender" value="1" id="female" />女</label>
+            <div class="6u 12u(narrower)">
+              <select name="gender">
+                <option>性別▽</option>
+                <option value="0">男</option>
+                <option value="1">女</option>
+              </select>
             </div>
+            <?php
+              $cols = array(
+                array("bd-y", "出生年", 1995, 2005),
+                array("bd-m", "月", 1, 12),
+                array("bd-d", "日", 1, 31)
+              );
+              foreach($cols as $col){
+                echo '<div class="2u 4u(narrower)"><select name="'.$col[0].'">';
+                echo '<option>'.$col[1].'▽</option>';
+                for($i = $col[2]; $i <= $col[3]; $i++){
+                  echo '<option value="'.$i.'">'.$i.'</option>';
+                }
+                echo '</select></div>';
+              }
+            ?>
+            <div class="6u 12u(narrower)"><input type="text" name="uid" placeholder="身分證字號 (保險用)" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="school" placeholder="就讀學校" /></div>
             <div class="6u 12u(narrower)">
               <select name="size">
-                <option>年級</option>
+                <option>年級▽</option>
                 <option value="1">一年級</option>
                 <option value="2">二年級</option>
                 <option value="3">三年級</option>
@@ -36,8 +55,8 @@
             <div class="6u 12u(narrower)"><input type="tel" name="tel" placeholder="聯絡電話" /></div>
             <div class="6u 12u(narrower)"><input type="text" name="emergency" placeholder="緊急聯絡人姓名/關係" /></div>
             <div class="6u 12u(narrower)"><input type="tel" name="emergency-tel" placeholder="緊急聯絡人電話" /></div>
-            <div class="6u 12u(narrower)"><input type="tel" name="eating" placeholder="特殊飲食需求 (eg. 素食、不吃牛...)" /></div>
-            <div class="6u 12u(narrower)"><input type="tel" name="illness" placeholder="特殊疾病、狀況" /></div>
+            <div class="6u 12u(narrower)"><input type="text" name="eating" placeholder="特殊飲食需求 (eg. 素食、不吃牛...)" /></div>
+            <div class="6u 12u(narrower)"><input type="text" name="illness" placeholder="特殊疾病、狀況" /></div>
             <div class="12u"><input type="email" name="email" placeholder="聯絡 Email" /></div>
             <div class="12u"><input type="text" name="address" placeholder="通訊地址" /></div>
             <div class="12u"><textarea name="hobby" placeholder="個人興趣或特質" rows="6"></textarea></div>
