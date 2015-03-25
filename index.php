@@ -195,6 +195,8 @@ $app->post('/register', function() use($app) {
         $reg['photo_'.$fn] = $upload_name;
       }
     }
+    $reg['ua'] = $_SERVER['HTTP_USER_AGENT'];
+    $reg['ip'] = $_SERVER['REMOTE_ADDR'];
     $reg['reg_time'] = R::isoDateTime();
   }
 
