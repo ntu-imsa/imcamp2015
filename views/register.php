@@ -49,6 +49,7 @@
                 <option value="1">一年級</option>
                 <option value="2">二年級</option>
                 <option value="3">三年級</option>
+                <option value="4">其他</option>
               </select>
             </div>
           </div>
