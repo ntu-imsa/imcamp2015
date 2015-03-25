@@ -79,6 +79,10 @@
 通訊地址
 -->
           <div class="row">
+            <div class="3u">安全性驗證：</div>
+            <div class="9u">
+              <div class="g-recaptcha" data-sitekey="6LcMCAQTAAAAAC5pXpq0Dloi3DkKX5cycWoN23Av"></div>
+            </div>
             <div class="12u" style="color:orange">
               送出前請確認以上表單填寫完整!
             </div>
