@@ -230,6 +230,16 @@ $app->post('/register', function() use($app) {
   $app->render('message.php', $message);
 });
 
+$app->get('/login', function() use($app) {
+  $app->render('message.php', array('title' => 'Coming Soon!', 'message' => '報名系統將於 4/1 開放，敬請期待唷～<br><div class="row">
+    <div class="12u">
+      <ul class="actions">
+        <li><a href="./" class="button">回首頁</a></li>
+      </ul>
+    </div>
+  </div>'));
+});
+
 $app->get('/thankyou', function() use($app) {
   $app->render('message.php', array('title' => 'Thank You!', 'message' => '感謝您的填寫，我們將盡快回覆<br><div class="row">
     <div class="12u">
