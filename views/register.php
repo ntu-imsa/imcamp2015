@@ -6,7 +6,7 @@
     </header>
     <div class="box container 75%">
 
-        <form method="post" action="./register">
+        <form method="post" action="./register" enctype="multipart/form-data">
           <div class="row 50%">
             <div class="6u 12u(narrower)"><input type="text" name="name" placeholder="姓名" /></div>
             <div class="6u 12u(narrower)">
@@ -32,6 +32,10 @@
               }
             ?>
             <div class="6u 12u(narrower)"><input type="text" name="rocid" placeholder="身分證字號 (保險用)" /></div>
+            <div class="3u">大頭照：</div>
+            <div class="9u"><input name="id" type="file"></div>
+            <div class="3u">個人生活照：</div>
+            <div class="9u"><input name="life" type="file"></div>
             <div class="6u 12u(narrower)"><input type="text" name="school" placeholder="就讀學校" /></div>
             <div class="6u 12u(narrower)">
               <select name="grade">
@@ -75,6 +79,9 @@
 通訊地址
 -->
           <div class="row">
+            <div class="12u" style="color:orange">
+              送出前請確認以上表單填寫完整!
+            </div>
             <div class="12u">
               <ul class="actions">
                 <li><input type="submit" value="送出" /></li>
