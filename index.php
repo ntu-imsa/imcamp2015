@@ -147,7 +147,8 @@ $app->post('/register', function() use($app) {
     'email' => 0,
     'address' => 0,
     'hobby' => 0,
-    'experience' => 0
+    'experience' => 0,
+    'expect' => 0
   );
 
   $reg = R::dispense('reg');
