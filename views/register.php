@@ -6,7 +6,7 @@
     </header>
     <div class="box container 75%">
 
-        <form method="post" action="./contact">
+        <form method="post" action="./register">
           <div class="row 50%">
             <div class="6u 12u(narrower)"><input type="text" name="name" placeholder="姓名" /></div>
             <div class="6u 12u(narrower)">

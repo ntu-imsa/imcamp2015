@@ -1,8 +1,8 @@
 <?php
 session_start();
 require 'includes/config.php';
+require 'includes/rb.php';
 require 'vendor/autoload.php';
-require 'rb.php';
 use Mailgun\Mailgun;
 
 R::setup( 'mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS );
@@ -102,6 +102,10 @@ $app->get('/register', function() use($app) {
     </div>
   </div>'));
   */
+});
+
+$app->post('/register', function() use($app) {
+  print_r($_POST);
 });
 
 $app->get('/thankyou', function() use($app) {
