@@ -158,33 +158,58 @@ $app->post('/register', function() use($app) {
       }
     }else{
       $error['title'] = 'QAQ';
-      echo 'nyan'.$para_key;
     }
   }
 
   if(empty($error)){
+    $files = array('id', 'life');
+    $legal_exts = array('jpg', 'jpeg', 'png', 'gif');
+    foreach($files as $fn){
+      $original_name = explode('.', strtolower($_FILES[$fn]['name']));
+      $ext = $original_name[count($original_name)-1];
+      if( ! ($_FILES[$fn]['error'] != 0 && in_array($ext, $legal_exts) && $_FILES[$fn]['size'] <= 5*1024*1024 ) ){
+        $error['title'] = 'QAQ';
+        $error['message'] = '照片接受的格式為 JPG, PNG, GIF<br>檔案大小請勿超過 5 MB<br><div class="row">
+          <div class="12u">
+            <ul class="actions">
+              <li><a href="javascript:history.back()" class="button">回上頁</a></li>
+            </ul>
+          </div>
+        </div>';
+      }else{
+        $upload_name = time().'_'.rand(100,999).'.'.$ext;
+        move_uploaded_file($_FILES[$fn]['tmp_name'], 'uploads/'.$upload_name);
+        $reg['photo_'.$fn] = $upload_name;
+      }
+    }
+    $reg['reg_time'] = R::isoDateTime();
+  }
+
+  $message = array();
+
+  if(empty($error)){
     R::store($reg);
-    $app->render('message.php', array(
-      'title' => '報名成功！',
-      'message' => '感謝您的報名，請靜待通知喔～<br><div class="row">
+    $message['title'] = '報名成功！';
+    $message['message'] = '感謝您的報名，請靜待通知喔～<br><div class="row">
         <div class="12u">
           <ul class="actions">
             <li><a href="./" class="button">回首頁</a></li>
           </ul>
         </div>
-      </div>'
-    ));
-  }else{
+      </div>';
+  }else if(!isset($error['message'])){
     $error['message'] = '表單有錯誤喔<br><div class="row">
       <div class="12u">
         <ul class="actions">
-          <li><a href="./" class="button">回首頁</a></li>
+          <li><a href="javascript:history.back()" class="button">回上頁</a></li>
         </ul>
       </div>
     </div>';
-    $app->render('message.php', $error);
+    $message = $error;
+  }else{
+    $message = $error;
   }
-
+  $app->render('message.php', $message);
 });
 
 $app->get('/thankyou', function() use($app) {
