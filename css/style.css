@@ -280,7 +280,7 @@
 		}
 
 			form label {
-				display: block;
+				display: inline;
 			}
 
 			form input[type="text"],

@@ -221,6 +221,7 @@ $app->post('/register', function() use($app) {
       }
     }
 
+    $reg['source'] = !empty($_POST['source']) ? implode(',', $_POST['source']) : '' ;
     $reg['ua'] = $_SERVER['HTTP_USER_AGENT'];
     $reg['ip'] = $_SERVER['REMOTE_ADDR'];
     $reg['reg_time'] = R::isoDateTime();

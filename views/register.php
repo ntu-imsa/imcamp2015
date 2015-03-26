@@ -83,6 +83,15 @@
             <div class="12u"><textarea name="hobby" placeholder="個人興趣或特質" rows="6"></textarea></div>
             <div class="12u"><textarea name="experience" placeholder="特殊經歷(社團活動、工作經驗或其他特殊事蹟等,限國高中時期)" rows="6"></textarea></div>
             <div class="12u"><textarea name="expect" placeholder="報名動機及期待收穫" rows="6"></textarea></div>
+            <div class="12u">你從何處得知臺大資管營：<br>
+              <label><input type="checkbox" name="source[]" value="aza"> 杜鵑花節攤位 </label>
+              <label><input type="checkbox" name="source[]" value="search"> 網路搜尋 </label>
+              <label><input type="checkbox" name="source[]" value="fb"> Facebook 專頁 </label>
+              <label><input type="checkbox" name="source[]" value="schoolweb"> 學校網站 </label>
+              <label><input type="checkbox" name="source[]" value="sposter"> 學校海報 </label>
+              <label><input type="checkbox" name="source[]" value="cposter"> 補習班海報 </label>
+              <input type="text" name="source[]" placeholder="其他">
+            </div>
             <div class="12u"><label><input type="checkbox" name="special_discount" id="special_discount" value="1">申請家境清寒報名費減免</label></div>
             <div class="row" id="special_upload" style="display:none">
               <div class="12u">為協助家境清寒學生能參與本次活動，<br>上傳相關證明文件並錄取後，得以2000元報名費參與本次活動。</div>
