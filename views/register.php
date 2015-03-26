@@ -68,7 +68,7 @@
             <div class="6u 12u(narrower)"><input type="tel" name="tel" placeholder="聯絡電話" /></div>
           </div>
           <div class="row 50%">
-            <div class="6u 12u(narrower)"><input type="text" name="emergency" placeholder="緊急聯絡人姓名/關係" /></div>
+            <div class="6u 12u(narrower)"><input type="text" name="emergency" placeholder="緊急聯絡人 (eg. 胡抽抽/爸爸)" /></div>
             <div class="6u 12u(narrower)"><input type="tel" name="emergency_tel" placeholder="緊急聯絡人電話" /></div>
           </div>
           <div class="row 50%">
