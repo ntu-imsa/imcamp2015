@@ -92,19 +92,31 @@ $app->post('/contact', function() use($app) {
 });
 
 $app->get('/register', function() use($app) {
-  $app->render('register.php');
-  /*
-  $app->render('message.php', array('title' => 'Coming Soon!', 'message' => '報名系統將於 4/1 開放，敬請期待唷～<br><div class="row">
-    <div class="12u">
-      <ul class="actions">
-        <li><a href="./" class="button">回首頁</a></li>
-      </ul>
-    </div>
-  </div>'));
-  */
+  $current_time = time();
+  if($current_time < REG_START){
+    $app->render('message.php', array('title' => 'Coming Soon!', 'message' => '報名系統將於 4/1 開放，敬請期待唷～<br><div class="row">
+      <div class="12u">
+        <ul class="actions">
+          <li><a href="./" class="button">回首頁</a></li>
+        </ul>
+      </div>
+    </div>'));
+  }else if($current_time > REG_END){
+    $app->render('message.php', array('title' => 'Thank you!', 'message' => '報名時間已經結束～<br><div class="row">
+      <div class="12u">
+        <ul class="actions">
+          <li><a href="./" class="button">回首頁</a></li>
+        </ul>
+      </div>
+    </div>'));
+  }else{
+    $app->render('register.php');
+  }
 });
 
 $app->post('/register', function() use($app) {
+
+  if(time() > REG_END) exit();
 
   // Check reCaptcha result
   $ch = curl_init();

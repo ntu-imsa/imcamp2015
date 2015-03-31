@@ -6,4 +6,6 @@
   define("DB_NAME","");
   define("DB_USER","");
   define("DB_PASS","");
+  define("REG_START","");
+  define("REG_END", "");
 ?>
