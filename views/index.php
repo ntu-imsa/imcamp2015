@@ -65,7 +65,7 @@
 						<p>課程內容準備中，敬請期待!</p>
 					</header>
 
-					<!-- Lightbox Gallery  -->
+<!--
 						<div class="container 80% gallery">
 							<div class="row 0% images">
 								<div class="4u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
@@ -81,6 +81,7 @@
 								<div class="6u"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
 							</div>
 						</div>
+-->
 				</div>
 			</section>
 
