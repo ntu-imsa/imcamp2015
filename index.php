@@ -100,7 +100,7 @@ $app->get('/register', function() use($app) {
   if($current_time < REG_START){
     $app->render('countdown.php', array(
       'title' => '開放報名倒數中',
-      'stop_callback_js' => '$(\'.message\').html(\'The clock has stopped!\')',
+      'stop_callback_js' => 'window.location.reload();',
       'time' => REG_START - $current_time
     ));
   }else if($current_time > REG_END){
