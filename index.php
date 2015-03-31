@@ -24,6 +24,10 @@ $app->get('/', function() use($app) {
   $app->render('index.php');
 });
 
+$app->get('/contact', function() use($app) {
+  $app->render('contact.php');
+});
+
 $app->post('/contact', function() use($app) {
   require 'includes/akismet.fuspam.php';
   $required_parameters = array("name", "email", "subject", "message");

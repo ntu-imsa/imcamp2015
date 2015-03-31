@@ -1,3 +1,12 @@
+<!-- Facebook Like Box code -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=520188428109474&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 		<!-- Intro -->
 			<section id="intro" class="main style1 dark fullscreen">
@@ -72,7 +81,6 @@
 								<div class="6u"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
 							</div>
 						</div>
-
 				</div>
 			</section>
 
@@ -81,29 +89,14 @@
 				<div class="content container">
 					<header>
 						<h2>聯絡我們</h2>
-						<p>想了解更多關於臺大資管營的訊息嗎？<br>歡迎寄信到camp2015@ntu.im、<a href="//facebook.com/ntuimcamp" target="_blank">私訊粉專</a>、<br>或使用以下表單聯絡我們<br>我們將盡快回覆 :)</p>
+						<p>想了解更多關於臺大資管營的訊息嗎？<br>別忘了追蹤我們的 <a href="//facebook.com/ntuimcamp" target="_blank">Facebok 粉專</a>，有疑問也歡迎填寫<a href="./contact">聯絡表單</a><br>我們將盡快回覆 :)</p>
 					</header>
-					<div class="box container 75%">
-
-							<form method="post" action="./contact">
-								<div class="row 50%">
-									<div class="6u"><input type="text" name="name" placeholder="姓名" /></div>
-									<div class="6u"><input type="email" name="email" placeholder="Email" /></div>
-								</div>
-								<div class="row 50%">
-									<div class="12u"><input type="text" name="subject" placeholder="主旨" /></div>
-								</div>
-								<div class="row 50%">
-									<div class="12u"><textarea name="message" placeholder="詢問或意見內容..." rows="6"></textarea></div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<ul class="actions">
-											<li><input type="submit" value="送出" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
+					<div class="not-narrower">
+						<div class="fb-page" data-href="https://www.facebook.com/ntuimcamp" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
 					</div>
+					<div class="only-narrower">
+						<div class="fb-page" data-href="https://www.facebook.com/ntuimcamp" data-width="320" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+					</div>
+					<br><br>
 				</div>
 			</section>
