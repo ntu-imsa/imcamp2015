@@ -94,13 +94,11 @@ $app->post('/contact', function() use($app) {
 $app->get('/register', function() use($app) {
   $current_time = time();
   if($current_time < REG_START){
-    $app->render('message.php', array('title' => 'Coming Soon!', 'message' => '報名系統將於 4/1 開放，敬請期待唷～<br><div class="row">
-      <div class="12u">
-        <ul class="actions">
-          <li><a href="./" class="button">回首頁</a></li>
-        </ul>
-      </div>
-    </div>'));
+    $app->render('countdown.php', array(
+      'title' => '開放報名倒數中',
+      'stop_callback_js' => '$(\'.message\').html(\'The clock has stopped!\')',
+      'time' => REG_START - $current_time
+    ));
   }else if($current_time > REG_END){
     $app->render('message.php', array('title' => 'Thank you!', 'message' => '報名時間已經結束～<br><div class="row">
       <div class="12u">

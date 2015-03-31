@@ -12,15 +12,18 @@
 		<script src="js/jquery.scrollex.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+    <script src="js/flipclock.min.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
 			<link rel="stylesheet" href="css/style-normal.css" />
 		</noscript>
+    <link rel="stylesheet" href="css/flipclock.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     <script src='https://www.google.com/recaptcha/api.js'></script>
+
 	</head>
 	<body>
 
