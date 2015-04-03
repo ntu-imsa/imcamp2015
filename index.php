@@ -310,7 +310,13 @@ $app->get('/admin_portal', function() use($app) {
     $app->render('admin_portal_guest.php');
   }else{
     // logged in user
-
+    $reg = R::findAll('reg');
+    if(!empty($reg)){
+      $cols = array('id','name','gender','school','grade','size','tel','email');
+      $app->render('table.php', array('cols' => $cols, 'rows' => $reg));
+    }else{
+      $app->render('message.php', array('title' => 'QAQ!', 'message' => 'No registered user yet!'));
+    }
   }
 });
 
@@ -339,6 +345,22 @@ $app->post('/admin_portal', function() use($app) {
       }
     }
     $app->render('message.php', array('title' => 'Staff Only!', 'message' => 'Unauthorized Access!'));
+  }
+});
+
+$app->get('/admin_reg_detail', function() use($app) {
+  if(!isset($_SESSION['user'])){
+    $app->response->redirect('./admin_portal');
+    $app->halt(302);
+  }else{
+    if(isset($_GET['id'])){
+      $reg = R::load('reg', $_GET['id']);
+      if(!empty($reg)){
+        $app->render('admin_reg_detail.php', array('data' => $reg));
+      }else{
+        $app->render('message.php', array('title' => 'Oops!', 'message' => 'Not Found!'));
+      }
+    }
   }
 });
 
