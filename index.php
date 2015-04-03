@@ -191,6 +191,10 @@ $app->post('/register', function() use($app) {
     }
   }
 
+  if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $error['title'] = 'QAQ';
+  }
+
   // File upload handling
   if(empty($error)){
     $files = array('id', 'life');
@@ -245,6 +249,19 @@ $app->post('/register', function() use($app) {
 
   if(empty($error)){
     R::store($reg);
+    // send thankyou mail
+    date_default_timezone_set('Asia/Taipei');
+    $mg = new Mailgun(MAILGUN_KEY);
+    $domain = "ntu.shouko.tw";
+    $envelope = array(
+      'from'    => '2015 台大資管營 <imcamp2015@ntu.shouko.tw>',
+      'to'      => $_POST['email'],
+      'subject' => '2015 台灣大學資訊管理營 報名成功通知信',
+      'h:Reply-To' => 'camp2015@ntu.im',
+      'text'    => $_POST['name']." 同學你好，\n\n台大資管營已經於 ".date("Y/m/d H:i:s")." 收到你的報名表\n感謝你的報名，我們將於 5/10 報名截止後儘速通知你錄取結果 :)\n\n期待與你相見\n\n2015 台灣大學資訊管理營"
+    );
+    $mg->sendMessage($domain, $envelope);
+
     $message['title'] = '報名成功！';
     $message['message'] = '感謝您的報名，請靜待通知喔～<br><div class="row">
         <div class="12u">
