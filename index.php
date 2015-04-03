@@ -13,11 +13,15 @@ $app = new \Slim\Slim(
 
 $app->hook('slim.before.dispatch', function () use ($app) {
 //  echo $app->request()->getPathInfo();
-	$app->render('header.php', array("nav" => "public"));
+	if(!isset($_GET['fn'])){
+    $app->render('header.php', array("nav" => "public"));
+  }
 });
 
 $app->hook('slim.after.dispatch', function () use ($app) {
-	$app->render('footer.php');
+  if(!isset($_GET['fn'])){
+	   $app->render('footer.php');
+   }
 });
 
 $app->get('/', function() use($app) {
@@ -359,6 +363,25 @@ $app->get('/admin_reg_detail', function() use($app) {
         $app->render('admin_reg_detail.php', array('data' => $reg));
       }else{
         $app->render('message.php', array('title' => 'Oops!', 'message' => 'Not Found!'));
+      }
+    }
+  }
+});
+
+$app->get('/file', function() use($app) {
+  if(!isset($_SESSION['user'])){
+    $app->halt(401);
+  }else if(isset($_GET['fn']) && $_GET['fn'] !== ''){
+    // TODO refine this section
+    if(strpos('/', $_GET['fn']) === false && strpos('\\', $_GET['fn']) === false){
+      $fn = './uploads/'.$_GET['fn'];
+      if(file_exists($fn)){
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mime = finfo_file($finfo, $fn);
+        $app->response->headers->set("Content-Type", $mime);
+        echo file_get_contents($fn);
+      }else{
+        $app->halt(404);
       }
     }
   }
