@@ -15,7 +15,7 @@
         foreach($cols['text'] as $col){
           echo '<div class="row">';
           echo '<div class="3u">'.$col.'</div>';
-          echo '<div class="9u" style="text-align:left">'.$data[$col].'</div>';
+          echo '<div class="9u" style="text-align:left">'.nl2br($data[$col]).'</div>';
           echo '</div>';
         }
         foreach($cols['photo'] as $col){
