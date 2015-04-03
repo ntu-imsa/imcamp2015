@@ -41,6 +41,9 @@
                   case "reg":
                     include "header_nav_reg.php";
                     break;
+                  case "admin":
+                    include "header_nav_admin.php";
+                    break;
                   default:
                     include "header_nav_public.php";
                 }

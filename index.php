@@ -14,7 +14,11 @@ $app = new \Slim\Slim(
 $app->hook('slim.before.dispatch', function () use ($app) {
 //  echo $app->request()->getPathInfo();
 	if(!isset($_GET['fn'])){
-    $app->render('header.php', array("nav" => "public"));
+    $nav = 'public';
+    if(isset($_SESSION['user'])){
+      $nav = 'admin';
+    }
+    $app->render('header.php', array("nav" => $nav));
   }
 });
 
@@ -385,6 +389,11 @@ $app->get('/file', function() use($app) {
       }
     }
   }
+});
+
+$app->get('/logout', function() use($app) {
+  session_destroy();
+  $app->response->redirect('./');
 });
 
 $app->run();
