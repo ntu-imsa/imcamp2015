@@ -305,5 +305,42 @@ $app->get('/thankyou', function() use($app) {
   </div>'));
 });
 
+$app->get('/admin_portal', function() use($app) {
+  if(!isset($_SESSION['user'])){
+    $app->render('admin_portal_guest.php');
+  }else{
+    // logged in user
+
+  }
+});
+
+$app->post('/admin_portal', function() use($app) {
+  if(isset($_POST['register']) && $_POST['register'] == 1){
+    // register
+    if(!(isset($_POST['user']) && isset($_POST['pwd'])) || $_POST['pwd'][0] !== $_POST['pwd'][1]){
+      $app->halt(400);
+    }else{
+      $reg_data = R::dispense('staff');
+      $reg_data['user'] = $_POST['user'];
+      $reg_data['pwd'] = hash('sha256', $_POST['pwd'][0]);
+      $reg_data['type'] = 0;
+      R::store($reg_data);
+      $app->render('message.php', array('title' => 'Success!', 'message' => 'Ask admin to activate your account.'));
+    }
+  }else{
+    // login
+    $staff = R::findOne( 'staff', ' user = ? ', [ $_POST['user'] ] );
+    if($staff != NULL){
+      if($staff['pwd'] == hash('sha256', $_POST['pwd'][0]) && $staff['type'] != 0){
+        // success
+        $_SESSION['user'] = $staff['user'];
+        $app->response->redirect('./admin_portal');
+        $app->halt(302);
+      }
+    }
+    $app->render('message.php', array('title' => 'Staff Only!', 'message' => 'Unauthorized Access!'));
+  }
+});
+
 $app->run();
 ?>
