@@ -192,7 +192,7 @@ $app->post('/register', function() use($app) {
         $error['title'] = 'QAQ';
         break;
       }else{
-        $reg[$para_key] = $_POST[$para_key];
+        $reg[$para_key] = htmlspecialchars($_POST[$para_key]);
       }
     }else{
       $error['title'] = 'QAQ';
