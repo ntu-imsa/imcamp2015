@@ -4,6 +4,9 @@
 		<title>2015 臺灣大學資訊管理營</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="你有沒有，看過台大的星空？你有沒有，在椰林大道上盡情奔馳過？2015 年夏天，讓我們一同留下屬於自己的足跡！臺大資管營以入門的程式設計課程，搭配有趣的策略模擬遊戲，帶領高中生體驗資管系的特色，進而啟發學習的興趣。" />
+		<meta property="og:title" content="2015 臺灣大學資訊管理營" />
+		<meta property="og:image" content="https://ntu.im/camp/2015/images/og.png" />
+		<meta property="og:description" content="你有沒有，看過台大的星空？你有沒有，在椰林大道上盡情奔馳過？2015 年夏天，讓我們一同留下屬於自己的足跡！臺大資管營以入門的程式設計課程，搭配有趣的策略模擬遊戲，帶領高中生體驗資管系的特色，進而啟發學習的興趣。" />
 		<link rel="icon" type="image/png" href="images/favicon.png" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
