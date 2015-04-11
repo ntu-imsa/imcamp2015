@@ -11,6 +11,9 @@
       ?>
       </tr>
       <?php
+        $stat = array('gender' => array());
+        $stat['gender'][0] = 0;
+        $stat['gender'][1] = 0;
         foreach($rows as $row){
           echo '<tr>';
           foreach($cols as $col){
@@ -19,9 +22,13 @@
             }else{
               echo '<td>'.$row[$col].'</td>';
             }
+            if($col == 'gender'){
+              $stat['gender'][$row[$col]]++;
+            }
           }
           echo '</tr>';
         }
+        echo '<tr><td></td><td></td><td></td><td>T: '.count($rows).',M: '.$stat['gender'][0].',F: '.$stat['gender'][1].'</td></td>';
       ?>
     </table>
   </div>
