@@ -28,7 +28,7 @@
           }
           echo '</tr>';
         }
-        echo '<tr><td></td><td></td><td></td><td>T: '.count($rows).',M: '.$stat['gender'][0].',F: '.$stat['gender'][1].'</td></td>';
+        echo '<tr><td></td><td></td><td></td><td>T: '.count($rows).' / M: '.$stat['gender'][0].' / F: '.$stat['gender'][1].'</td></td>';
       ?>
     </table>
   </div>
