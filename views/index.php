@@ -62,26 +62,34 @@
 				<div class="content container">
 					<header>
 						<h2>課程內容</h2>
-						<p>課程內容準備中，敬請期待!</p>
+						<p></p>
 					</header>
 
-<!--
 						<div class="container 80% gallery">
+              <div class="row 0% images">
+                <div class="3u not-narrower"> &nbsp;</div>
+                <div class="6u 12u(narrower)"><a href="images/schedule.png" class="image fit from-left"><img src="images/schedule.png" title="2015 台大資管營行程表" alt="" /></a></div>
+                <div class="3u not-narrower"> &nbsp;</div>
+              </div>
+<!--
 							<div class="row 0% images">
-								<div class="4u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="4u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="4u"><a href="images/fulls/02.jpg" class="image fit from-right"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
+								<div class="3u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+                <div class="3u"><a href="images/fulls/02.jpg" class="image fit from-left"><img src="images/thumbs/02.jpg" title="The Anonymous Red" alt="" /></a></div>
+                <div class="3u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+								<div class="3u"><a href="images/fulls/02.jpg" class="image fit from-right"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
 							</div>
 							<div class="row 0% images">
-								<div class="6u"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="6u"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
+                <div class="3u"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
+								<div class="3u"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
+                <div class="3u"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
+								<div class="3u"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
 							</div>
 							<div class="row 0% images">
 								<div class="6u"><a href="images/fulls/05.jpg" class="image fit from-left"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
 								<div class="6u"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
 							</div>
+            -->
 						</div>
--->
 				</div>
 			</section>
 
