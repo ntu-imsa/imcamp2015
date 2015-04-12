@@ -278,6 +278,10 @@ $app->post('/register', function() use($app) {
           </ul>
         </div>
       </div>';
+    // To track convertion rate using GA, succcess message is not rendered right in this page
+    $_SESSION['reg_success'] = 1;
+    $app->response->redirect('./register_thankyou');
+    $app->halt(302);
   }else if(!isset($error['message'])){
     $error['message'] = '表單有錯誤喔<br><div class="row">
       <div class="12u">
@@ -325,6 +329,25 @@ $app->get('/admin_portal', function() use($app) {
     }else{
       $app->render('message.php', array('title' => 'QAQ!', 'message' => 'No registered user yet!'));
     }
+  }
+});
+
+$app->get('/register_thankyou', function() use($app) {
+  if(isset($_SESSION['reg_success'])){
+    unset($_SESSION['rec_success']);
+    $message = array();
+    $message['title'] = '報名成功！';
+    $message['message'] = '感謝您的報名，請靜待通知喔～<br><div class="row">
+        <div class="12u">
+          <ul class="actions">
+            <li><a href="./" class="button">回首頁</a></li>
+          </ul>
+        </div>
+      </div>';
+    $app->render('message.php', $message);
+  }else{
+    $app->response->redirect('./');
+    $app->halt(302);
   }
 });
 
