@@ -1,6 +1,6 @@
 <?php
   $cols = array();
-  $cols['text'] = array('name', 'gender', 'school', 'grade', 'size', 'tel', 'emergency', 'emergency_tel', 'eating', 'illness', 'email', 'address', 'hobby', 'experience', 'expect');
+  $cols['text'] = array('name', 'gender', 'school', 'grade', 'size', 'tel', 'emergency', 'emergency_tel', 'eating', 'illness', 'email', 'address', 'hobby', 'experience', 'expect', 'source');
   $cols['photo'] = array('photo_id', 'photo_life');
 ?>
 <section class="main style3 secondary">
