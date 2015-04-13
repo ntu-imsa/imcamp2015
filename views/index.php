@@ -12,7 +12,7 @@
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container 75%">
 					<header>
-						<h2><img class="6u 8u(narrower)" src="images/logo.png"><br>臺大資管營</h2>
+						<h2><img class="6u 8u(narrower)" src="images/logo.png"><br>台大資管營</h2>
 					</header>
 					<p><strong>你有沒有，看過台大的星空？<br>
 你有沒有，在椰林大道上盡情奔馳過？<br>
@@ -31,7 +31,7 @@
 					</header>
 					<p><strong>資訊管理</strong>是一門跨領域的學問，<br>
 它結合了<strong>資訊科技基礎</strong>與<strong>專業管理素養</strong>，在資訊技術與商務應用、開發者與使用者間搭起一座橋樑。<br><br>
-臺大資管營以入門的程式設計課程，搭配有趣的策略模擬遊戲，帶領高中生初探資訊、管理、與經濟領域的基礎知識，體驗資管系的特色，進而啟發學習的興趣。<br>
+台大資管營以入門的程式設計課程，搭配有趣的策略模擬遊戲，帶領高中生初探資訊、管理、與經濟領域的基礎知識，體驗資管系的特色，進而啟發學習的興趣。<br>
 除了精心設計的課程以外，我們亦安排了知名企業的參訪活動，探索未來就從這裏開始！</p>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
@@ -98,7 +98,7 @@
 				<div class="content container">
 					<header>
 						<h2>聯絡我們</h2>
-						<p>想了解更多關於臺大資管營的訊息嗎？<br>別忘了追蹤我們的 <a href="//facebook.com/ntuimcamp" target="_blank">Facebok 粉專</a>，有疑問也歡迎填寫<a href="./contact">聯絡表單</a><br>我們將盡快回覆 :)</p>
+						<p>想了解更多關於台大資管營的訊息嗎？<br>別忘了追蹤我們的 <a href="//facebook.com/ntuimcamp" target="_blank">Facebok 粉專</a>，有疑問也歡迎填寫<a href="./contact">聯絡表單</a><br>我們將盡快回覆 :)</p>
 					</header>
 					<div class="not-narrower">
 						<div class="fb-page" data-href="https://www.facebook.com/ntuimcamp" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
