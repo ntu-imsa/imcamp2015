@@ -338,13 +338,29 @@ $app->get('/register_thankyou', function() use($app) {
     unset($_SESSION['rec_success']);
     $message = array();
     $message['title'] = '報名成功！';
-    $message['message'] = '感謝您的報名，請靜待通知喔～<br><div class="row">
+    $message['message'] = '感謝您的報名，請靜待通知喔～<br>
+      別忘了追蹤我們的 <a href="//facebook.com/ntuimcamp" target="_blank">Facebok 粉專</a>，取得最即時的訊息！
+		  <div class="not-narrower">
+					<div class="fb-page" data-href="https://www.facebook.com/ntuimcamp" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+			</div>
+			<div class="only-narrower">
+					<div class="fb-page" data-href="https://www.facebook.com/ntuimcamp" data-width="320" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+			</div><br>
+      <div class="row">
         <div class="12u">
           <ul class="actions">
             <li><a href="./" class="button">回首頁</a></li>
           </ul>
         </div>
-      </div>';
+      </div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=520188428109474&version=v2.3";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, \'script\', \'facebook-jssdk\'));</script>';
     $app->render('message.php', $message);
   }else{
     $app->response->redirect('./');
