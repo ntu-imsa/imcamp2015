@@ -227,6 +227,12 @@ $app->post('/register', function() use($app) {
       }
     }
 
+    if(isset($_POST['group_discount']) && $_POST['group_discount'] == 1){
+      if(isset($_POST['gp'])){
+        $reg['gp'] = $_POST['gp'];
+      }
+    }
+
     if(isset($_POST['special_discount']) && $_POST['special_discount'] == 1){
       $fn = 'sp';
       $original_name = explode('.', strtolower($_FILES[$fn]['name']));

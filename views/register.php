@@ -93,18 +93,33 @@
               <nobr><label><input type="checkbox" name="source[]" value="cposter"> 入班宣傳 </label></nobr><wbr>
               <input type="text" name="source[]" placeholder="其他">
             </div>
+            <div class="row">
+              <div class="12u"><label><input type="checkbox" name="group_discount" id="group_discount" value="1">申請三人團報優惠</label><br>
+                和好朋友揪團報名資管營吧！只要湊滿三人，錄取後即可得到 200 元報名費減免唷。
+              </div>
+            </div>
+            <div class="row container 75%" id="group_upload" style="display:none">
+              <div class="12u"><input name="gp" type="text" placeholder="夥伴姓名"></div>
+            </div>
             <div class="12u"><label><input type="checkbox" name="special_discount" id="special_discount" value="1">申請家境清寒報名費減免</label></div>
-            <div class="row" id="special_upload" style="display:none">
+            <div class="row container 75%" id="special_upload" style="display:none">
               <div class="12u">為協助家境清寒學生能參與本次活動，<br>上傳相關證明文件並錄取後，得以2000元報名費參與本次活動。</div>
               <div class="4u">相關證明文件：</div>
               <div class="6u"><input name="sp" type="file"></div>
             </div>
             <script type="text/javascript">
               document.getElementById('special_discount').onclick = function() {
-                if(this.checked){
+                if(this.checked == true){
                   document.getElementById('special_upload').style.display = '';
                 }else{
                   document.getElementById('special_upload').style.display = 'none';
+                }
+              };
+              document.getElementById('group_discount').onclick = function() {
+                if(this.checked == true){
+                  document.getElementById('group_upload').style.display = '';
+                }else{
+                  document.getElementById('group_upload').style.display = 'none';
                 }
               };
             </script>
