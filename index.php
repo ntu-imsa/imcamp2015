@@ -213,7 +213,7 @@ $app->post('/register', function() use($app) {
       if( ! ( isset($_FILES[$fn]) && $_FILES[$fn]['error'] == 0 && in_array($ext, $legal_exts) && $_FILES[$fn]['size'] <= 8*1024*1024 ) ){
         error_log('IM Camp: File upload error, name: '.$_FILES[$fn]['name'].', error: '.$_FILES[$fn]['error'].', size: '.$_FILES[$fn]['size'], 0);
         $error['title'] = 'QAQ';
-        $error['message'] = '照片接受的格式為 JPG, PNG, GIF<br>檔案大小請勿超過 5 MB<br><div class="row">
+        $error['message'] = '照片接受的格式為 JPG, PNG, GIF<br>檔案大小請勿超過 5 MB<br>並請確定兩張照片欄位都有上傳<br><div class="row">
           <div class="12u">
             <ul class="actions">
               <li><a href="javascript:history.back()" class="button">回上頁</a></li>
