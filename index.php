@@ -210,7 +210,7 @@ $app->post('/register', function() use($app) {
     foreach($files as $fn){
       $original_name = explode('.', strtolower($_FILES[$fn]['name']));
       $ext = $original_name[count($original_name)-1];
-      if( ! ( isset($_FILES[$fn]) && $_FILES[$fn]['error'] == 0 && in_array($ext, $legal_exts) && $_FILES[$fn]['size'] <= 5*1024*1024 ) ){
+      if( ! ( isset($_FILES[$fn]) && $_FILES[$fn]['error'] == 0 && in_array($ext, $legal_exts) && $_FILES[$fn]['size'] <= 8*1024*1024 ) ){
         error_log('IM Camp: File upload error, name: '.$_FILES[$fn]['name'].', error: '.$_FILES[$fn]['error'].', size: '.$_FILES[$fn]['size'], 0);
         $error['title'] = 'QAQ';
         $error['message'] = '照片接受的格式為 JPG, PNG, GIF<br>檔案大小請勿超過 5 MB<br><div class="row">
