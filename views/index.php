@@ -70,6 +70,11 @@
                 <div class="3u not-narrower"> &nbsp;</div>
                 <div class="6u 12u(narrower)"><a href="images/schedule.png" class="image fit from-left"><img src="images/schedule.png" title="2015 台大資管營行程表" alt="" /></a></div>
                 <div class="3u not-narrower"> &nbsp;</div>
+              </div><br><br>
+              <div class="row 0% images">
+                <div class="4u 12u(narrower)"><a href="images/visit_mozilla.png" class="image fit from-left"><img src="images/visit_mozilla.png" title="企業參訪 #1 - Mozilla Taiwan" alt="" /></a></div>
+                <div class="4u 12u(narrower)"><a href="images/visit_yahoo.png" class="image fit from-left"><img src="images/visit_yahoo.png" title="企業參訪 #2 - Yahoo! 奇摩" data-long-title="從搜尋起家，之後逐步整合媒體資訊、社群以及通訊的產品的 Yahoo! 奇摩是深受全球網友喜愛的網路媒體。每月前來造訪 Yahoo! 奇摩首頁的不重複網友近1300萬人，位居台灣同類型網站之冠！想一窺推動 Yahoo! 奇摩搜尋、電子信箱、即時通、拍賣背後的團隊嗎？在這次的台大資管營，我們有榮幸前往 Yahoo! 奇摩位於台北的辦公室參觀！！" alt="" /></a></div>
+                <div class="4u 12u(narrower)"><a href="images/visit_coming.png" class="image fit from-left"><img src="images/visit_coming.png" title="" alt="" /></a></div>
               </div>
 <!--
 							<div class="row 0% images">
