@@ -15,7 +15,7 @@ $app->hook('slim.before.dispatch', function () use ($app) {
 //  echo $app->request()->getPathInfo();
 	if(!isset($_GET['fn'])){
     $nav = 'public';
-    if(isset($_SESSION['user'])){
+    if(isset($_SESSION['admin_user'])){
       $nav = 'admin';
     }
     $app->render('header.php', array("nav" => $nav));
@@ -112,7 +112,7 @@ $app->get('/register', function() use($app) {
       'time' => REG_START - $current_time
     ));
   }else if($current_time > REG_END){
-    $app->render('message.php', array('title' => 'Thank you!', 'message' => '報名時間已經結束～<br><div class="row">
+    $app->render('message.php', array('title' => 'Thank you!', 'message' => '報名時間已經結束～<br>已報名同學請至<a href="./regcheck">這裡</a>查看狀態<br><div class="row">
       <div class="12u">
         <ul class="actions">
           <li><a href="./" class="button">回首頁</a></li>
@@ -304,6 +304,34 @@ $app->post('/register', function() use($app) {
   $app->render('message.php', $message);
 });
 
+$app->get('/regcheck', function() use($app) {
+  if(!isset($_SESSION['user'])){
+    $app->render('regcheck_guest.php');
+  }else{
+    $user = R::findOne( 'reg', ' id = ? ', [ $_SESSION['user'] ] );
+    if($user != NULL){
+      $user['admission'] = '未公佈';
+      $user['regstat'] = '報名成功';
+      $app->render('regcheck.php', array('data' => $user));
+    }
+  }
+});
+
+$app->post('/regcheck', function() use($app) {
+  if(isset($_POST['user']) && isset($_POST['pwd'])){
+    $user = R::findOne( 'reg', ' email = ? ', [ $_POST['user'] ] );
+    if($user != NULL){
+      if($user['rocid'] == $_POST['pwd']){
+        // success
+        $_SESSION['user'] = $user['id'];
+        $app->response->redirect('./regcheck');
+        $app->halt(302);
+      }
+    }
+    $app->render('message.php', array('title' => 'QAQ', 'message' => '找不到指定的使用者'));
+  }
+});
+
 $app->get('/login', function() use($app) {
   $app->render('message.php', array('title' => 'Coming Soon!', 'message' => '報名系統將於 4/1 開放，敬請期待唷～<br><div class="row">
     <div class="12u">
@@ -325,7 +353,7 @@ $app->get('/thankyou', function() use($app) {
 });
 
 $app->get('/admin_portal', function() use($app) {
-  if(!isset($_SESSION['user'])){
+  if(!isset($_SESSION['admin_user'])){
     $app->render('admin_portal_guest.php');
   }else{
     // logged in user
@@ -393,7 +421,7 @@ $app->post('/admin_portal', function() use($app) {
     if($staff != NULL){
       if($staff['pwd'] == hash('sha256', $_POST['pwd'][0]) && $staff['type'] != 0){
         // success
-        $_SESSION['user'] = $staff['user'];
+        $_SESSION['admin_user'] = $staff['user'];
         $app->response->redirect('./admin_portal');
         $app->halt(302);
       }
@@ -403,7 +431,7 @@ $app->post('/admin_portal', function() use($app) {
 });
 
 $app->get('/admin_reg_detail', function() use($app) {
-  if(!isset($_SESSION['user'])){
+  if(!isset($_SESSION['admin_user'])){
     $app->response->redirect('./admin_portal');
     $app->halt(302);
   }else{
@@ -419,7 +447,7 @@ $app->get('/admin_reg_detail', function() use($app) {
 });
 
 $app->get('/file', function() use($app) {
-  if(!isset($_SESSION['user'])){
+  if(!isset($_SESSION['admin_user'])){
     $app->halt(401);
   }else if(isset($_GET['fn']) && $_GET['fn'] !== ''){
     // TODO refine this section
