@@ -90,7 +90,7 @@
               <nobr><label><input type="checkbox" name="source[]" value="schoolweb"> 學校網站 </label></nobr><wbr>
               <nobr><label><input type="checkbox" name="source[]" value="sposter"> 學校海報 </label></nobr><wbr>
               <nobr><label><input type="checkbox" name="source[]" value="cposter"> 補習班海報 </label></nobr><wbr>
-              <nobr><label><input type="checkbox" name="source[]" value="cposter"> 入班宣傳 </label></nobr><wbr>
+              <nobr><label><input type="checkbox" name="source[]" value="inclass"> 入班宣傳 </label></nobr><wbr>
               <input type="text" name="source[]" placeholder="其他">
             </div>
             <div class="row">
