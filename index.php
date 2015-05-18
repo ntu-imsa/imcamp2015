@@ -310,9 +310,25 @@ $app->get('/regcheck', function() use($app) {
   }else{
     $user = R::findOne( 'reg', ' id = ? ', [ $_SESSION['user'] ] );
     if($user != NULL){
-      $user['admission'] = '未公佈';
-      $user['regstat'] = '報名成功';
-      $app->render('regcheck.php', array('data' => $user));
+      $bill = array();
+      if($user['status'] > 0){
+        $bill = R::findOne( 'bill', ' uid = ? ', [ $user['id'] ]);
+        if($bill == NULL){
+          $bill = array();
+        }
+        $user['discount'] = 0;
+        $user['discount_text'] = array();
+        $discount_aza = R::getRow( 'SELECT * FROM discount_aza WHERE email = ? ', [ $user['email'] ]);
+        if($discount_aza != NULL){
+          $user['discount'] += DISCOUNT_AZA_AMOUNT;
+          $user['discount_text'][] = '杜鵑花節留資料';
+        }
+        if($user['gp'] != NULL && $user['gp'] != ''){
+          $user['discount'] += DISCOUNT_GROUP_AMOUNT;
+          $user['discount_text'][] = '團報優惠';
+        }
+      }
+      $app->render('regcheck.php', array('data' => $user, 'data_bill' => $bill));
     }
   }
 });
