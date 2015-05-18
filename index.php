@@ -477,6 +477,21 @@ $app->post('/admin_portal', function() use($app) {
   }
 });
 
+$app->get('/admin_bill', function() use($app) {
+  if(!isset($_SESSION['admin_user'])){
+    $app->response->redirect('./admin_portal');
+    $app->halt(302);
+  }else{
+    $reg = R::getAll('SELECT reg.id, reg.name, reg.gender, reg.size, reg.tel, reg.email, bill.id as bid, bill.should_pay, bill.info, bill.status FROM reg LEFT JOIN bill ON reg.id = bill.uid WHERE reg.status > 0 ');
+    if(!empty($reg)){
+      $cols = array('id','name','gender','size','tel','email', 'should_pay', 'info', 'status');
+      $app->render('admin_bill.php', array('cols' => $cols, 'rows' => $reg));
+    }else{
+      $app->render('message.php', array('title' => 'QAQ!', 'message' => 'No registered user yet!'));
+    }
+  }
+});
+
 $app->get('/admin_reg_detail', function() use($app) {
   if(!isset($_SESSION['admin_user'])){
     $app->response->redirect('./admin_portal');
