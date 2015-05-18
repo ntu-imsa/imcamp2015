@@ -15,6 +15,8 @@
         $stat = array('gender' => array());
         $stat['gender'][0] = 0;
         $stat['gender'][1] = 0;
+        $stat['paid'][0] = 0;
+        $stat['paid'][1] = 0;
         foreach($rows as $row){
           echo '<tr>';
           foreach($cols as $col){
@@ -35,9 +37,12 @@
               $stat['gender'][$row[$col]]++;
             }
           }
+          if($row['status'] == 1){
+            $stat['paid'][$row['gender']]++;
+          }
           echo '</tr>';
         }
-        echo '<tr><td></td><td></td><td></td><td>T: '.count($rows).' / M: '.$stat['gender'][0].' / F: '.$stat['gender'][1].'</td></td>';
+        echo '<tr><td></td><td></td><td></td><td>T: '.count($rows).' / M: '.$stat['gender'][0].' / F: '.$stat['gender'][1].'</td><td></td><td>Paid: '.($stat['paid'][0] + $stat['paid'][1]).' / M: '.$stat['paid'][0].' / F: '.$stat['paid'][1].'<td></tr>';
       ?>
     </table>
     <input type="submit" value="Confirm Paid" />

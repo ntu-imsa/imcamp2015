@@ -502,6 +502,8 @@ $app->post('/admin_bill', function() use($app) {
       $value = abs($value);
     }
     R::exec('UPDATE bill SET status = 1 WHERE id IN('.implode(',',$bid).')');
+    $app->response->redirect('./admin_bill');
+    $app->halt(302);
   }
 });
 
