@@ -492,6 +492,19 @@ $app->get('/admin_bill', function() use($app) {
   }
 });
 
+$app->post('/admin_bill', function() use($app) {
+  if(!isset($_SESSION['admin_user'])){
+    $app->response->redirect('./admin_portal');
+    $app->halt(302);
+  }else{
+    $bid = $_POST['bid'];
+    foreach($bid as &$value){
+      $value = abs($value);
+    }
+    R::exec('UPDATE bill SET status = 1 WHERE id IN('.implode(',',$bid).')');
+  }
+});
+
 $app->get('/admin_reg_detail', function() use($app) {
   if(!isset($_SESSION['admin_user'])){
     $app->response->redirect('./admin_portal');

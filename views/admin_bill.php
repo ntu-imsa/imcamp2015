@@ -22,7 +22,11 @@
             if($col == 'id'){
               echo '<a href="./admin_reg_detail?id='.$row[$col].'">'.$row[$col].'</a>';
             }else if($col == 'status'){
-              echo '<input type="checkbox" name="bid[]" value="'.$row['bid'].'">';
+              if($row[$col] == 0){
+                echo '<input type="checkbox" name="bid[]" value="'.$row['bid'].'">';
+              }else{
+                echo $row[$col];
+              }
             }else{
               echo $row[$col];
             }
