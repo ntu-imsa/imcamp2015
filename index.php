@@ -335,6 +335,7 @@ $app->get('/regcheck', function() use($app) {
 
 $app->post('/regcheck', function() use($app) {
   if(isset($_POST['user']) && isset($_POST['pwd'])){
+    // login
     $user = R::findOne( 'reg', ' email = ? ', [ $_POST['user'] ] );
     if($user != NULL){
       if($user['rocid'] == $_POST['pwd']){
@@ -345,6 +346,36 @@ $app->post('/regcheck', function() use($app) {
       }
     }
     $app->render('message.php', array('title' => 'QAQ', 'message' => '找不到指定的使用者'));
+  }else if(isset($_SESSION['user']) && isset($_POST['info']) && $_POST['info'] != ''){
+    // confirm bill info
+    $bill = R::dispense('bill');
+    $bill['uid'] = $_SESSION['user'];
+    $bill['status'] = 0;
+    $bill['should_pay'] = $_SESSION['should_pay'];
+    $bill['info'] = htmlspecialchars($_POST['info']);
+    $bill['fill_time'] = R::isoDateTime();
+    R::store($bill);
+    $app->render('message.php', array(
+      'title' => 'Thank you!',
+      'message' => '匯款資訊填寫成功，請靜待確認<br><div class="row">
+      <div class="12u">
+        <ul class="actions">
+          <li><a href="./regcheck" class="button">回上頁</a></li>
+        </ul>
+      </div>
+    </div>'
+    ));
+  }else{
+    $app->render('message.php', array(
+      'title' => 'QAQ',
+      'message' => '表單有錯誤喔<br><div class="row">
+      <div class="12u">
+        <ul class="actions">
+          <li><a href="javascript:history.back()" class="button">回上頁</a></li>
+        </ul>
+      </div>
+    </div>'
+    ));
   }
 });
 
