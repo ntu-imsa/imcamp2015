@@ -65,36 +65,30 @@
 						<p></p>
 					</header>
 
-						<div class="container 80% gallery">
-              <div class="row 0% images">
-                <div class="3u not-narrower"> &nbsp;</div>
-                <div class="6u 12u(narrower)"><a href="images/schedule.png" class="image fit from-left"><img src="images/schedule.png" title="2015 台大資管營行程表" alt="" /></a></div>
-                <div class="3u not-narrower"> &nbsp;</div>
-              </div><br><br>
-              <div class="row 0% images">
-                <div class="4u 12u(narrower)"><a href="images/visit_mozilla.png" class="image fit from-left"><img src="images/visit_mozilla.png" title="企業參訪 #1 - Mozilla Taiwan" alt="" /></a></div>
-                <div class="4u 12u(narrower)"><a href="images/visit_yahoo.png" class="image fit from-left"><img src="images/visit_yahoo.png" title="企業參訪 #2 - Yahoo! 奇摩" data-long-title="從搜尋起家，之後逐步整合媒體資訊、社群以及通訊的產品的 Yahoo! 奇摩是深受全球網友喜愛的網路媒體。每月前來造訪 Yahoo! 奇摩首頁的不重複網友近1300萬人，位居台灣同類型網站之冠！想一窺推動 Yahoo! 奇摩搜尋、電子信箱、即時通、拍賣背後的團隊嗎？在這次的台大資管營，我們有榮幸前往 Yahoo! 奇摩位於台北的辦公室參觀！！" alt="" /></a></div>
-                <div class="4u 12u(narrower)"><a href="images/visit_microsoft.png" class="image fit from-left"><img src="images/visit_microsoft.png" title="企業參訪 #3 - Microsoft Taiwan" alt="" /></a></div>
-              </div>
-<!--
-							<div class="row 0% images">
-								<div class="3u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-                <div class="3u"><a href="images/fulls/02.jpg" class="image fit from-left"><img src="images/thumbs/02.jpg" title="The Anonymous Red" alt="" /></a></div>
-                <div class="3u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="3u"><a href="images/fulls/02.jpg" class="image fit from-right"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
-							</div>
-							<div class="row 0% images">
-                <div class="3u"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="3u"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
-                <div class="3u"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="3u"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
-							</div>
-							<div class="row 0% images">
-								<div class="6u"><a href="images/fulls/05.jpg" class="image fit from-left"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
-								<div class="6u"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
-							</div>
-            -->
-						</div>
+					<div class="container 80% gallery">
+            <div class="row 0% images">
+              <div class="3u not-narrower"> &nbsp;</div>
+              <div class="6u 12u(narrower)"><a href="images/schedule.png" class="image fit from-left"><img src="images/schedule.png" title="2015 台大資管營行程表" alt="" /></a></div>
+              <div class="3u not-narrower"> &nbsp;</div>
+            </div><br><br>
+            <div class="row 0% images">
+              <div class="4u 12u(narrower)"><a href="images/visit_mozilla.png" class="image fit from-left"><img src="images/visit_mozilla.png" title="企業參訪 #1 - Mozilla Taiwan" alt="" /></a></div>
+              <div class="4u 12u(narrower)"><a href="images/visit_yahoo.png" class="image fit from-left"><img src="images/visit_yahoo.png" title="企業參訪 #2 - Yahoo! 奇摩" data-long-title="從搜尋起家，之後逐步整合媒體資訊、社群以及通訊的產品的 Yahoo! 奇摩是深受全球網友喜愛的網路媒體。每月前來造訪 Yahoo! 奇摩首頁的不重複網友近1300萬人，位居台灣同類型網站之冠！想一窺推動 Yahoo! 奇摩搜尋、電子信箱、即時通、拍賣背後的團隊嗎？在這次的台大資管營，我們有榮幸前往 Yahoo! 奇摩位於台北的辦公室參觀！！" alt="" /></a></div>
+              <div class="4u 12u(narrower)"><a href="images/visit_microsoft.png" class="image fit from-left"><img src="images/visit_microsoft.png" title="企業參訪 #3 - Microsoft Taiwan" alt="" /></a></div>
+            </div>
+          </div>
+          <br><br>
+          <header>
+      			<h2>企業贊助</h2>
+      			<p></p>
+    			</header>
+
+    			<div class="container 80% gallery">
+            <div class="row images">
+              <div class="3u 12u(narrower)"><a href="images/sponsor_1.jpg" class="image fit from-left"><img src="images/sponsor_1.jpg" title="企業贊助 #1 泰山" alt="" /></a></div>
+              <div class="3u 12u(narrower)"><a href="images/sponsor_2.png" class="image fit from-left"><img src="images/sponsor_2.png" title="企業贊助 #2 速纖" alt="" /></a></div>
+            </div>
+          </div>
 				</div>
 			</section>
 
